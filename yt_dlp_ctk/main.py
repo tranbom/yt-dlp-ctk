@@ -161,6 +161,7 @@ class App(ctk.CTk):
 
         self.title("yt-dlp-gui")
         self.geometry('1260x690')
+        self.minsize(1260, 690)
 
         self.tab_view = MainTabs(master=self, width=1220, height=650)
         self.tab_view.grid(row=0, column=0, padx=20, pady=20)
