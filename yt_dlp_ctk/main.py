@@ -127,6 +127,20 @@ class MainTabs(ctk.CTkTabview):
         self.queue_textbox = ctk.CTkTextbox(master=self.tab('Main'), width=560)
         self.queue_textbox.grid(row=1, column=1, padx=20, pady=20)
 
+        self.progress_frame = ctk.CTkFrame(master=self.tab('Main'), width=560)
+        self.progress_frame.grid(row=2, column=1, padx=20, pady=20)
+
+        self.status_label = ctk.CTkLabel(
+            master=self.progress_frame,
+            text='Status: Idle'
+        )
+
+        self.status_label.grid(row=0, column=0, padx=10, pady=10)
+
+        self.progress_bar = ctk.CTkProgressBar(master=self.progress_frame, width=500)
+        self.progress_bar.grid(row=1, column=0, padx=10, pady=10)
+        self.progress_bar.set(0)
+
         # History tab
         self.history_textbox = ctk.CTkTextbox(
             master=self.tab('History'), height=400, width=1160
